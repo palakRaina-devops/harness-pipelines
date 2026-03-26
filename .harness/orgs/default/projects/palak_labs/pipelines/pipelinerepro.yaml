@@ -12,4 +12,3 @@ pipeline:
         template:
           templateRef: account.stage_T
           versionLabel: v1
-          gitBranch: main
