@@ -1,0 +1,15 @@
+pipeline:
+  name: pipeline-repro
+  identifier: pipelinerepro
+  projectIdentifier: palak_labs
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: guglu
+        identifier: guglu
+        tags: {}
+        template:
+          templateRef: account.stage_T
+          versionLabel: v1
+          gitBranch: main
