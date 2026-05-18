@@ -7,7 +7,7 @@ pipeline:
   stages:
     - stage:
         name: guglu00
-        identifier: guglu
+        identifier: guglu_test
         tags: {}
         template:
           templateRef: account.stage_T
