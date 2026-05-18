@@ -6,7 +6,7 @@ pipeline:
   tags: {}
   stages:
     - stage:
-        name: guglu
+        name: guglu00
         identifier: guglu
         tags: {}
         template:
