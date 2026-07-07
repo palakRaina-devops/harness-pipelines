@@ -23,7 +23,9 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: echo "hello testing unidirectional flow test again"
+                        script: |-
+                          echo "hello testing unidirectional flow test again"
+                          echo "custom"
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
