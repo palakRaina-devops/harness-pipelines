@@ -6,9 +6,25 @@ pipeline:
   tags: {}
   stages:
     - stage:
-        name: guglu00uu
-        identifier: guglu_test
+        name: test
+        identifier: test
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    executionTarget: {}
+                    source:
+                      type: Inline
+                      spec:
+                        script: echo "hello"
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
         tags: {}
-        template:
-          templateRef: account.stage_T
-          versionLabel: v1
