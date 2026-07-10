@@ -1,0 +1,17 @@
+pipeline:
+  name: parent-pipe
+  identifier: parentpipe
+  projectIdentifier: palak_labs
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: dede
+        identifier: dede
+        description: ""
+        type: Pipeline
+        spec:
+          org: default
+          project: palak_labs
+          pipeline: testchained
+          inputs: {}
