@@ -1,0 +1,48 @@
+pipeline:
+  name: test-chained
+  identifier: testchained
+  projectIdentifier: palak_labs
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: dee
+        identifier: dee
+        description: ""
+        type: Deployment
+        spec:
+          deploymentType: Kubernetes
+          service:
+            serviceRef: k8service
+          environment:
+            environmentRef: K8env
+            deployToAll: false
+            infrastructureDefinitions:
+              - identifier: k8sInfra
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    executionTarget: {}
+                    source:
+                      type: Inline
+                      spec:
+                        script: |-
+                          echo "Hello"
+                          echo "test4=<+stage.variables.test4>"
+                          echo "test7=<+stage.variables.test7>"
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+            rollbackSteps: []
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
