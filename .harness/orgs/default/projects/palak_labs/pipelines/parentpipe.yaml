@@ -25,4 +25,4 @@ pipeline:
             variables:
               - name: Tower_URL
                 type: String
-                value: <+pipeline.variables.Tower_URL>
+                value: <+input>
