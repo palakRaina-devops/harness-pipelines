@@ -5,7 +5,7 @@ pipeline:
   orgIdentifier: default
   tags: {}
   variables:
-    - name: Tower_URL_CHILD
+    - name: Tower_URL
       type: String
       description: ""
       required: false
