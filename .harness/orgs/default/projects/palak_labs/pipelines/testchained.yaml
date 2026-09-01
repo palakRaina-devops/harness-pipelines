@@ -4,6 +4,12 @@ pipeline:
   projectIdentifier: palak_labs
   orgIdentifier: default
   tags: {}
+  variables:
+    - name: Tower_URL
+      type: String
+      description: ""
+      required: false
+      value: <+input>
   stages:
     - stage:
         name: dee
@@ -35,6 +41,7 @@ pipeline:
                           echo "Hello"
                           echo "test4=<+stage.variables.test4>"
                           echo "test7=<+stage.variables.test7>"
+                          echo "Tower_URL=<+pipeline.variables.Tower_URL>"
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
