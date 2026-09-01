@@ -4,6 +4,12 @@ pipeline:
   projectIdentifier: palak_labs
   orgIdentifier: default
   tags: {}
+  variables:
+    - name: Tower_URL
+      type: String
+      description: ""
+      required: false
+      value: https://tower.example.com
   stages:
     - stage:
         name: dede
@@ -14,4 +20,9 @@ pipeline:
           org: default
           project: palak_labs
           pipeline: testchained
-          inputs: {}
+          inputs:
+            identifier: testchained
+            variables:
+              - name: Tower_URL
+                type: String
+                value: <+pipeline.variables.Tower_URL>
