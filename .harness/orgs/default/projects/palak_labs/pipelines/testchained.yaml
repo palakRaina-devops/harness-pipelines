@@ -30,7 +30,7 @@ pipeline:
                       type: Inline
                       spec:
                         script: |-
-                          Tower_URL="<+pipeline.variables.Tower_URL>"
+                          Tower_URL="<+stage.variables.Tower_URL>"
                           echo $Tower_URL
                     environmentVariables: []
                     outputVariables: []
