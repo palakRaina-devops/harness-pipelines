@@ -12,19 +12,11 @@ pipeline:
       value: <+input>
   stages:
     - stage:
-        name: dee
-        identifier: dee
+        name: custom
+        identifier: custom
         description: ""
-        type: Deployment
+        type: Custom
         spec:
-          deploymentType: Kubernetes
-          service:
-            serviceRef: k8service
-          environment:
-            environmentRef: K8env
-            deployToAll: false
-            infrastructureDefinitions:
-              - identifier: k8sInfra
           execution:
             steps:
               - step:
@@ -37,19 +29,8 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: |-
-                          echo "Hello"
-                          echo "test4=<+stage.variables.test4>"
-                          echo "test7=<+stage.variables.test7>"
-                          echo "Tower_URL=<+pipeline.variables.Tower_URL>"
+                        script: "echo \"TOWER URL: <+pipeline.variables.Tower_URL>\""
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
-            rollbackSteps: []
         tags: {}
-        failureStrategies:
-          - onFailure:
-              errors:
-                - AllErrors
-              action:
-                type: StageRollback
