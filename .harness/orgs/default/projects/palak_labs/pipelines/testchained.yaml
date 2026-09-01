@@ -29,7 +29,9 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: "echo \"TOWER URL: <+pipeline.variables.Tower_URL>\""
+                        script: |-
+                          Tower_URL="<+pipeline.variables.Tower_URL>"
+                          echo $Tower_URL
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
